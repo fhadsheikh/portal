@@ -1,0 +1,45 @@
+<div class="sugg-single-header">
+    <div class="container-fluid">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3">
+                    <i class="fa fa-calendar-o"></i> {{sugg.submissiondate}}
+                </div>
+                <div class="col-md-6 center">
+                    Submitted by <span style="sugg-single-submittedby">{{sugg.name}}</span>
+                </div>
+                <div class="col-md-3 right">
+                    <strong>{{sugg.votes}}</strong> votes
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="sugg-single stickyFooterDependancy">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-7">
+                <div class="sugg-single-title">
+                    <h1>{{sugg.title}}</h1>
+                </div>
+                <div class="sugg-single-body">
+                    <p>{{sugg.summary}}</p>
+                </div>
+            </div>
+            <div class="col-md-4 col-md-offset-1">
+            
+                <div ng-show="sugg.hasVoted" class="sugg-single-rating center">
+                    <h4 style="padding:20px 0px"><strong>{{sugg.hasVoted.firstname}} {{sugg.hasVoted.lastname}} </strong> from <strong>
+                        {{sugg.hasVoted.name}}</strong> voted for this feature on {{sugg.hasVoted.votedate}}</h4>
+                    <button class="btn btn-lg btn-info btn-block disabled"><i class="fa fa-thumbs-up"></i></button>
+                </div>                
+                <div ng-hide="sugg.hasVoted" class="sugg-single-rating center">
+                    <h4>Would you like to see this feature in ClockWork?</h4>
+                    <button class="btn btn-lg btn-info btn-block" ng-click="like(sugg.id)"><i class="fa fa-thumbs-up"></i></button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<messages ng-show="messages"></messages>

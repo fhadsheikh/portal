@@ -1,0 +1,103 @@
+<div>
+    <div class="header">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="logo"><a href=""><img src="http://clockworks.ca/images/clockworklogo3.png" height="80" alt="ClockWork Logo"></a></div>
+                </div>
+                <div class="col-md-6">
+                    <ul class="user-menu">
+                        <li>
+                            <div class="dropdown" data-toggle="dropdown" style="width:150px; text-align:right; display:inline">
+                                <a href="" data-toggle="dropdown" class="dropdown-toggle">{{main.user.name}} <i class="fa fa-caret-down"></i></a>
+                                <ul class="dropdown-menu">
+                                    <li><a ng-click="main.logout()">Sign out</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="dropdown" data-toggle="dropdown" style="width:150px; text-align:right; display:inline">
+                                <a href="" data-toggle="dropdown" class="dropdown-toggle"><i class="fa fa-plus"></i></a>
+                                <ul class="dropdown-menu">
+                                    <li><a ng-href="newsuggestion">Ask Question</a></li>
+                                    <li><a ng-href="newsuggestion">Create Ticket</a></li>
+                                    <li><a ng-href="newsuggestion">Request Tutorial</a></li>
+                                    <li><a ng-href="newsuggestion">Submit Suggestion</a></li>
+                                    <li><a ng-href="newsuggestion">Feature Request</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li><i class="fa fa-bell"></i></li>
+                        <li><i class="fa fa-th"></i></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="subheader">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <ul class="nav navbar-nav">
+                        <li>
+                            <a href="">
+                                <i class="fa fa-home"></i>
+                                <br>
+                                Dashboard
+                            </a>
+                        </li>
+                        <li>
+                            <a href="">
+                                <i class="fa fa-bug"></i>
+                                <br>
+                                Tickets
+                            </a>
+                        </li>
+                        <li>
+                            <a href="">
+                                <i class="fa fa-clipboard"></i>
+                                <br>
+                                Tutorials
+                            </a>
+                        </li>
+                        <li>
+                            <a href="">
+                                <i class="fa fa-youtube-play"></i>
+                                <br>
+                                Videos
+                            </a>
+                        </li>
+                        <li>
+                            <a href="">
+                                <i class="fa fa-question"></i>
+                                <br>
+                                Questions
+                            </a>
+                        </li>
+                        <li>
+                            <a href="">
+                                <i class="fa fa-comments"></i>
+                                <br>
+                                Discussions
+                            </a>
+                        </li>
+                        <li class="active">
+                            <a ng-href="suggestions">
+                                <i class="fa fa-archive"></i>
+                                <br>
+                                Suggestion Box
+                            </a>
+                        </li>
+                        <li ng-show="main.isAdmin">
+                            <a ng-href="moderate">
+                                <i class="fa fa-bomb"></i>
+                                <br>
+                                Moderate
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

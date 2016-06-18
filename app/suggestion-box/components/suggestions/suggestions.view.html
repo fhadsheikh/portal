@@ -1,0 +1,35 @@
+<search-bar search="search"></search-bar>
+
+<div class="sugg-menu">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3">{{count}} Suggestions</div>
+            <div class="col-md-6 center">
+                Sort by: 
+                <a ng-click="sortPopular('title')" ng-class="sortClass('title')">
+                    Name
+                </a>
+                | 
+                <a ng-click="sortPopular('-submissiondate')" ng-class="sortClass('submissiondate')">
+                    Newest
+                </a>
+                | 
+                <a ng-click="sortPopular('-votes')" ng-class="sortClass('votes')">
+                    Popular
+                </a>
+            </div>
+            <div class="col-md-3 right">
+                <a ng-click="viewMySuggestions()" ng-show="mySuggestions">My Suggestions</a>
+                <a ng-click="viewAllSuggestions()" ng-show="allSuggestions">All Suggestions</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="sugg-list stickyFooterDependancy">
+    <div class="container">
+        <div class="sugg-suggestion" ng-repeat="suggestion in suggestions | toArray | orderBy: order | filter:search.filter">
+            <search-card></search-card>
+        </div>
+    </div>
+</div>

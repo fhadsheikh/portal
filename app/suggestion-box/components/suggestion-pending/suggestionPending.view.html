@@ -1,0 +1,37 @@
+<div class="sugg-single-header">
+    <div class="container-fluid">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3">
+                    <i class="fa fa-calendar-o"></i> {{sugg.submissiondate}}
+                </div>
+                <div class="col-md-6 center">
+                    Submitted by <span style="sugg-single-submittedby">{{sugg.name}}</span>
+                </div>
+                <div class="col-md-3 right">
+                    <strong>{{sugg.votes}}</strong> votes
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="sugg-single stickyFooterDependancy">
+    <div class="container">
+        <div class="alert alert-warning center" role="alert">
+            <a href="#" class="alert-link" style="font-size:16pt;font-weight:normal">Suggestion is Pending</a>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="sugg-single-title">
+                    <h1>{{sugg.title}}</h1>
+                </div>
+                <div class="sugg-single-body">
+                    <p>{{sugg.summary}}</p>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+<messages></messages>

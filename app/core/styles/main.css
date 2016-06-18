@@ -1,0 +1,536 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto:300);
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,500,700);
+@import url(https://fonts.googleapis.com/css?family=Pacifico);
+/* line 1, ../common/search-bar/searchBar.scss */
+.searchbox {
+  border: none;
+  font-size: 18px;
+  font-weight: 400;
+  padding: 20px;
+  border-radius: 3px;
+  display: inline-block;
+  width: 100%;
+  color: rgba(0, 0, 0, 0.7);
+  width: 100%;
+  margin: 10px 0px;
+}
+
+/* line 4, ../components/login/login.scss */
+.cw-login-page {
+  width: 360px;
+  padding: 8% 0 0;
+  margin: auto;
+}
+
+/* line 9, ../components/login/login.scss */
+.cw-form {
+  position: relative;
+  z-index: 1;
+  background: #FFFFFF;
+  max-width: 360px;
+  margin: 0 auto 100px;
+  padding: 45px;
+  text-align: center;
+}
+
+/* line 18, ../components/login/login.scss */
+.cw-form input {
+  font-family: "Roboto", sans-serif;
+  outline: 0;
+  background: #f2f2f2;
+  width: 100%;
+  margin: 0 0 15px;
+  padding: 15px;
+  box-sizing: border-box;
+  font-size: 14px;
+  height: 50px;
+  border-radius: 0px;
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+  border: solid 1px white;
+}
+
+/* line 32, ../components/login/login.scss */
+.cw-form button {
+  font-family: "Roboto", sans-serif;
+  text-transform: uppercase;
+  outline: 0;
+  background: #47c4f0;
+  width: 100%;
+  border: 0;
+  padding: 15px;
+  color: #FFFFFF;
+  font-size: 14px;
+  -webkit-transition: all 0.3 ease;
+  transition: all 0.3 ease;
+  cursor: pointer;
+}
+
+/* line 46, ../components/login/login.scss */
+.cw-form button:hover, .cw-form button:active, .cw-form button:focus {
+  background: #38a5cc;
+}
+
+/* line 49, ../components/login/login.scss */
+.cw-form .cw-message {
+  margin: 15px 0 0;
+  color: #b3b3b3;
+  font-size: 12px;
+}
+
+/* line 54, ../components/login/login.scss */
+.cw-form .cw-message a {
+  color: #2097c1;
+  text-decoration: none;
+}
+
+/* line 58, ../components/login/login.scss */
+.cw-form .cw-register-form {
+  display: none;
+}
+
+/* line 61, ../components/login/login.scss */
+.cw-container {
+  position: relative;
+  z-index: 1;
+  max-width: 300px;
+  margin: 0 auto;
+}
+
+/* line 67, ../components/login/login.scss */
+.cw-container:before, .cw-container:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+/* line 72, ../components/login/login.scss */
+.cw-container .cw-info {
+  margin: 50px auto;
+  text-align: center;
+}
+
+/* line 76, ../components/login/login.scss */
+.cw-container .cw-info h1 {
+  margin: 0 0 15px;
+  padding: 0;
+  font-size: 36px;
+  font-weight: 300;
+  color: #1a1a1a;
+}
+
+/* line 83, ../components/login/login.scss */
+.cw-container .cw-info span {
+  color: #4d4d4d;
+  font-size: 12px;
+}
+
+/* line 87, ../components/login/login.scss */
+.cw-container .cw-info span a {
+  color: #000000;
+  text-decoration: none;
+}
+
+/* line 91, ../components/login/login.scss */
+.cw-container .cw-info span .cw-fa {
+  color: #EF3B3A;
+}
+
+/* line 3, ../../suggestion-box/styles/main.scss */
+.sugg-submit {
+  float: right;
+  margin-top: 7px;
+}
+
+/* line 8, ../../suggestion-box/styles/main.scss */
+.sugg-intro {
+  color: white;
+  padding: 30px 0px;
+  text-align: center;
+  background-image: url("/suggestion-box/images/bg.png");
+  font-family: 'Roboto', sans-serif;
+}
+
+/* line 16, ../../suggestion-box/styles/main.scss */
+.sugg-intro h1 {
+  font-size: 50px;
+  font-family: 'Pacifico', cursive;
+  padding-bottom: 20px;
+  text-shadow: 2px 2px #317086;
+}
+
+/* line 23, ../../suggestion-box/styles/main.scss */
+.sugg-menu {
+  padding-top: 20px;
+}
+
+/* line 27, ../../suggestion-box/styles/main.scss */
+.sugg-suggestion {
+  width: 100%;
+  border-top: solid 1px #E6E6E6;
+  margin: 20px 0px;
+  padding: 10px 0px;
+}
+
+/* line 34, ../../suggestion-box/styles/main.scss */
+.sugg-single-submittedby {
+  font-size: 16pt;
+  font-weight: 700;
+}
+
+/* line 39, ../../suggestion-box/styles/main.scss */
+.sugg-suggestion-title {
+  font-weight: 500;
+  font-size: 12pt;
+}
+
+/* line 43, ../../suggestion-box/styles/main.scss */
+.sugg-suggestion-desc {
+  font-size: 10pt;
+}
+
+/* line 47, ../../suggestion-box/styles/main.scss */
+.sugg-suggestion-rating {
+  font-size: 22pt;
+  color: gray;
+}
+
+/* line 52, ../../suggestion-box/styles/main.scss */
+.sugg-single {
+  margin: 30px 0px;
+  padding: 0px 20px;
+}
+
+/* line 57, ../../suggestion-box/styles/main.scss */
+.sugg-single-header {
+  padding: 25px 0px;
+  color: White;
+  font-size: 13pt;
+  background-image: url("/suggestion-box/images/bg.png");
+}
+
+/* line 63, ../../suggestion-box/styles/main.scss */
+.sugg-single-header h1 {
+  font-size: 50px;
+  font-family: 'Pacifico', cursive;
+  text-shadow: 2px 2px #317086;
+}
+
+/* line 69, ../../suggestion-box/styles/main.scss */
+.sugg-single-title {
+  margin: 40px 0px;
+  border-bottom: solid 1px #d4d4d4;
+}
+
+/* line 74, ../../suggestion-box/styles/main.scss */
+.sugg-single-rating {
+  margin: 30px 0px;
+}
+
+/* line 79, ../../suggestion-box/styles/main.scss */
+.selectedSort {
+  font-weight: bold;
+}
+
+/* line 1, ../../suggestion-box/common/messages/messages.scss */
+.messages {
+  background-color: #F1F1F1;
+  padding-top: 40px;
+  border-top: solid 1px #E0E0E0;
+}
+
+/* line 7, ../../suggestion-box/common/messages/messages.scss */
+.messagebox {
+  margin: 0px 0px 80px 0px;
+}
+
+/* line 11, ../../suggestion-box/common/messages/messages.scss */
+.messagebox button {
+  float: right;
+  margin-top: 10px;
+}
+
+/* line 16, ../../suggestion-box/common/messages/messages.scss */
+.messages-list {
+  list-style: none;
+  padding: 0px;
+}
+
+/* line 25, ../../suggestion-box/common/messages/messages.scss */
+.message {
+  border: solid 1px #D6D6D6;
+  border-radius: 5px;
+  margin: 5px 0px 26px 0px;
+  padding: 20px 0px 10px 20px;
+  background-color: white;
+}
+
+/* line 33, ../../suggestion-box/common/messages/messages.scss */
+.messagedate {
+  color: #969696;
+}
+
+/* line 1, ../../suggestion-box/components/moderate/moderate.scss */
+.moderate-suggestion {
+  cursor: pointer;
+}
+
+/* line 5, ../../suggestion-box/components/moderate/moderate.scss */
+.moderate-btn-success {
+  border-color: #4cae4c;
+}
+
+/* line 9, ../../suggestion-box/components/moderate/moderate.scss */
+.moderate-btn-warning {
+  border-color: #eea236;
+}
+
+/* line 13, ../../suggestion-box/components/moderate/moderate.scss */
+.moderate-btn-danger {
+  border-color: #d43f3a;
+}
+
+/* line 1, shortcuts.scss */
+.right {
+  text-align: right;
+}
+
+/* line 5, shortcuts.scss */
+.center {
+  text-align: center;
+}
+
+/* line 9, shortcuts.scss */
+.left {
+  float: left;
+}
+
+/* line 13, shortcuts.scss */
+.blue {
+  color: #0FA7DB;
+}
+
+/* line 13, main.scss */
+body {
+  font-family: 'Roboto', sans-serif;
+  color: #6F6F6F;
+}
+
+/* line 18, main.scss */
+a {
+  color: inherit;
+  cursor: pointer;
+}
+
+/* line 23, main.scss */
+a:hover {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* line 28, main.scss */
+::selection {
+  background: #98e4ff;
+  /* WebKit/Blink Browsers */
+}
+
+/* line 31, main.scss */
+::-moz-selection {
+  background: #98e4ff;
+  /* Gecko Browsers */
+}
+
+/* line 35, main.scss */
+.has-error .form-control {
+  border-color: #e6b2b1;
+}
+
+/* line 40, main.scss */
+.header {
+  border-top: solid 5px #47c4f0;
+}
+
+/* HEADER */
+/* line 46, main.scss */
+.navbar {
+  margin-bottom: -10px;
+}
+
+/* line 51, main.scss */
+.logo {
+  font-family: 'Pacifico', cursive;
+  font-size: 30pt;
+  color: #258EB3;
+}
+
+/* line 57, main.scss */
+.navbar-menu {
+  font-family: 'Open sans', sans-serif;
+  font-weight: 600;
+}
+
+/* line 63, main.scss */
+.user-menu {
+  list-style: none;
+  padding-top: 30px;
+  text-align: right;
+}
+
+/* line 69, main.scss */
+.user-menu li {
+  display: inline;
+  padding: 20px 6px;
+  color: #717171;
+}
+
+/* line 75, main.scss */
+.user-menu li ul li {
+  display: block;
+  padding: 0px 6px;
+  color: #717171;
+}
+
+/* line 81, main.scss */
+.user-menu li ul li a {
+  padding: 7px;
+  text-align: left;
+}
+
+/* line 86, main.scss */
+.user-menu li ul li a:hover {
+  background-color: white;
+  font-weight: 600;
+}
+
+/* SUBHEADER */
+/* line 92, main.scss */
+.subheader {
+  border-top: solid 1px #E0E0E0;
+  border-bottom: solid 1px #E0E0E0;
+  background-color: whitesmoke;
+}
+
+/* line 98, main.scss */
+.active {
+  border-top: solid 1px #47C4F0;
+}
+
+/* line 102, main.scss */
+.navbar-nav li {
+  text-align: center;
+}
+
+/* line 106, main.scss */
+.navbar-nav li a i {
+  font-size: 14pt;
+  padding: 2px 20px 10px 20px;
+  color: #777777;
+}
+
+/* line 116, main.scss */
+.footer {
+  padding: 30px 0px;
+  border-top: solid 1px #e0e0e0;
+  background-color: #3A3A3A;
+  color: white;
+  position: relative;
+  z-index: 10000;
+}
+
+/* line 126, main.scss */
+.footer-list {
+  list-style: none;
+  padding-left: 0px;
+}
+
+/* line 130, main.scss */
+.footer-list li {
+  border-bottom: solid 1px #616161;
+  padding: 6px 0px;
+}
+
+/* line 135, main.scss */
+.footer-list li:last-child {
+  border-bottom: none;
+}
+
+/* line 139, main.scss */
+.page {
+  position: relative;
+}
+
+/* line 143, main.scss */
+.ng-enter {
+  animation: fadeIn 0.2s both linear;
+  z-index: 5555;
+}
+
+/* styling.css */
+/* ANIMATIONS================================= */
+@keyframes rotateFall {
+  0% {
+    transform: rotateZ(0deg);
+  }
+  20% {
+    transform: rotateZ(10deg);
+    animation-timing-function: ease-out;
+  }
+  40% {
+    transform: rotateZ(17deg);
+  }
+  60% {
+    transform: rotateZ(16deg);
+  }
+  100% {
+    transform: translateY(100%) rotateZ(17deg);
+  }
+}
+/* slide in from the bottom */
+@keyframes slideOutLeft {
+  to {
+    transform: translateX(-100%);
+  }
+}
+@keyframes rotateOutNewspaper {
+  to {
+    transform: translateZ(-3000px) rotateZ(360deg);
+    opacity: 0;
+  }
+}
+@keyframes scaleUp {
+  from {
+    opacity: 0.5;
+    -webkit-transform: scale(0.5);
+  }
+}
+@keyframes slideInRight {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+@keyframes slideInUp {
+  from {
+    transform: translateY(100%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}

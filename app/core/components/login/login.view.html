@@ -1,0 +1,37 @@
+<div class="header">
+    <div class="container">
+        <div class="row" style="margin-top:25px">
+            <div class="col-md-6">
+                <div class="logo"><a href=""><img src="http://clockworks.ca/images/clockworklogo3.png" height="80" alt="ClockWork Logo"></a></div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container login stickyFooterDependancy" style="margin-top:40px">
+    <div class="cw-login-page">
+        <div class="cw-form">
+            <div ng-show="alert" class="alert alert-danger">{{alert}}</div>
+            <div ng-show="message" class="alert">{{message}}</div>
+            <form class="cw-register-form">
+                <input type="text" placeholder="Firstname" ng-model="firstname"/>
+                <input type="text" placeholder="Lastname" ng-model="lastname"/>
+                <input type="text" placeholder="Title" ng-model="title"/>
+                <input type="text" placeholder="Email Address" ng-model="email"/>
+                <button ng-click="signup()">Sign Up</button>
+            </form>
+            <form name="userForm" class="cw-login-form" novalidate>
+                <!--USERNAME-->
+                <div class="form-group" ng-class="{ 'has-error' : userForm.username.$invalid && !userForm.username.$pristine }">
+                    <input type="text" name="username" class="form-control" ng-model="credentials.username" placeholder="Username" required>
+                    <p ng-show="userForm.username.$invalid && !userForm.username.$pristine" class="help-block">Username is required.</p>
+                </div>
+                <!--PASSWORD-->
+                <div class="form-group" ng-class="{ 'has-error' : userForm.password.$invalid && !userForm.password.$pristine }">
+                    <input type="password" name="password" class="form-control" ng-model="credentials.password" placeholder="Password" required>
+                    <p ng-show="userForm.password.$invalid && !userForm.password.$pristine" class="help-block">Password is required.</p>
+                </div>
+                <button type="submit" ng-click="logIn(userForm)">login</button>
+            </form>
+        </div>
+    </div>
+</div>
