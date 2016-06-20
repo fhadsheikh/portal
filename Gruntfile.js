@@ -8,7 +8,7 @@ module.exports = function(grunt){
     var path = {
         dist: '.tmp',
         dev: 'app',
-        server: '192.168.1.128'
+        server: 'localhost',
     }
 
     grunt.initConfig({
@@ -18,7 +18,7 @@ module.exports = function(grunt){
         connect: {
             dist: {
                 options: {
-                    port: 9000,
+                    port: 9001,
                     hostname: path.server,
                     livereload:true,
                     base: path.dist,
@@ -33,7 +33,7 @@ module.exports = function(grunt){
             },
             dev: {
                 options: {
-                    port: 9000,
+                    port: 9001,
                     hostname: path.server,
                     livereload:true,
                     base: path.dev,

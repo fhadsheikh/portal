@@ -8,5 +8,5 @@
  * Constant in the suggestionboxApp.
  */
 portal.constant('API', {
-    'url':'http://devapps/api/'
+    'url':'http://localhost/api/'
 });

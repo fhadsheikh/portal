@@ -5,15 +5,15 @@
         <div class="row">
             <div class="col-md-3">{{count}} Suggestions</div>
             <div class="col-md-6 center">
-                Sort by: 
+                Sort by:
                 <a ng-click="sortPopular('title')" ng-class="sortClass('title')">
                     Name
                 </a>
-                | 
+                |
                 <a ng-click="sortPopular('-submissiondate')" ng-class="sortClass('submissiondate')">
                     Newest
                 </a>
-                | 
+                |
                 <a ng-click="sortPopular('-votes')" ng-class="sortClass('votes')">
                     Popular
                 </a>
@@ -27,9 +27,10 @@
 </div>
 
 <div class="sugg-list stickyFooterDependancy">
-    <div class="container">
+    <div class="container" infinite-scroll='loadMore()' infinite-scroll-disabled='loadBusy' infinite-scroll-distance='1'>
         <div class="sugg-suggestion" ng-repeat="suggestion in suggestions | toArray | orderBy: order | filter:search.filter">
             <search-card></search-card>
         </div>
+        <h2 ng-show="loadBusy">Loading more...</h2>
     </div>
 </div>

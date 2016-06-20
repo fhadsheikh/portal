@@ -7,7 +7,7 @@
  * # MainCtrl
  * Controller of the suggestionboxApp
  */
-suggestionBox.controller('SuggestionsCtrl', function ($scope,$location,suggestions,layout) {
+suggestionBox.controller('SuggestionsCtrl', function ($scope,$location,suggestions,layout,$timeout) {
 
     // For search directive
     $scope.search = {
@@ -27,7 +27,7 @@ suggestionBox.controller('SuggestionsCtrl', function ($scope,$location,suggestio
             $scope.allSuggestions = true;
         });
     };
-    
+
     $scope.viewAllSuggestions = function()
     {
         suggestions.getSuggestions().then(function(res){
@@ -37,7 +37,7 @@ suggestionBox.controller('SuggestionsCtrl', function ($scope,$location,suggestio
             $scope.allSuggestions = false;
         });
     };
-    
+
     $scope.openSuggestion = function(sugg){
         if(sugg.status === '1'){
             $location.path('/suggestion/'+sugg.id);
@@ -45,24 +45,34 @@ suggestionBox.controller('SuggestionsCtrl', function ($scope,$location,suggestio
             $location.path('/suggestion/pending/'+sugg.id);
         }
     };
-    
+
     $scope.sortPopular = function(item)
     {
         $scope.order = item;
         $scope.selectedSort = item;
     };
-    
-    
+
+
     $scope.sortClass = function(item)
     {
         if(item === $scope.selectedSort || '-'+item === $scope.selectedSort){return 'selectedSort';}
     };
-    
+
     $scope.viewAllSuggestions();
-    
+
     $scope.sortPopular('-votes');
-    
+
+//    $scope.loadMore = function(){
+//        if($scope.loadBusy) return;
+//        $scope.loadBusy = true;
+//
+//
+//
+//        $scope.loadBusy = false;
+//
+//    };
+
     // Stick footer to bottom of screen
     layout.stickyFooter(730);
-    
+
   });

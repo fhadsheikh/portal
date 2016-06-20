@@ -347,86 +347,88 @@ a:hover {
 /* line 40, main.scss */
 .header {
   border-top: solid 5px #47c4f0;
+  min-height: 120px;
+  padding-top: 15px;
 }
 
 /* HEADER */
-/* line 46, main.scss */
+/* line 48, main.scss */
 .navbar {
   margin-bottom: -10px;
 }
 
-/* line 51, main.scss */
+/* line 53, main.scss */
 .logo {
   font-family: 'Pacifico', cursive;
   font-size: 30pt;
   color: #258EB3;
 }
 
-/* line 57, main.scss */
+/* line 59, main.scss */
 .navbar-menu {
   font-family: 'Open sans', sans-serif;
   font-weight: 600;
 }
 
-/* line 63, main.scss */
+/* line 65, main.scss */
 .user-menu {
   list-style: none;
   padding-top: 30px;
   text-align: right;
 }
 
-/* line 69, main.scss */
+/* line 71, main.scss */
 .user-menu li {
   display: inline;
   padding: 20px 6px;
   color: #717171;
 }
 
-/* line 75, main.scss */
+/* line 77, main.scss */
 .user-menu li ul li {
   display: block;
   padding: 0px 6px;
   color: #717171;
 }
 
-/* line 81, main.scss */
+/* line 83, main.scss */
 .user-menu li ul li a {
   padding: 7px;
   text-align: left;
 }
 
-/* line 86, main.scss */
+/* line 88, main.scss */
 .user-menu li ul li a:hover {
   background-color: white;
   font-weight: 600;
 }
 
 /* SUBHEADER */
-/* line 92, main.scss */
+/* line 94, main.scss */
 .subheader {
   border-top: solid 1px #E0E0E0;
   border-bottom: solid 1px #E0E0E0;
   background-color: whitesmoke;
 }
 
-/* line 98, main.scss */
+/* line 100, main.scss */
 .active {
   border-top: solid 1px #47C4F0;
 }
 
-/* line 102, main.scss */
+/* line 104, main.scss */
 .navbar-nav li {
   text-align: center;
 }
 
-/* line 106, main.scss */
+/* line 108, main.scss */
 .navbar-nav li a i {
   font-size: 14pt;
   padding: 2px 20px 10px 20px;
   color: #777777;
 }
 
-/* line 116, main.scss */
+/* line 118, main.scss */
 .footer {
   padding: 30px 0px;
   border-top: solid 1px #e0e0e0;
@@ -436,29 +438,29 @@ a:hover {
   z-index: 10000;
 }
 
-/* line 126, main.scss */
+/* line 128, main.scss */
 .footer-list {
   list-style: none;
   padding-left: 0px;
 }
 
-/* line 130, main.scss */
+/* line 132, main.scss */
 .footer-list li {
   border-bottom: solid 1px #616161;
   padding: 6px 0px;
 }
 
-/* line 135, main.scss */
+/* line 137, main.scss */
 .footer-list li:last-child {
   border-bottom: none;
 }
 
-/* line 139, main.scss */
+/* line 141, main.scss */
 .page {
   position: relative;
 }
 
-/* line 143, main.scss */
+/* line 145, main.scss */
 .ng-enter {
   animation: fadeIn 0.2s both linear;
   z-index: 5555;
