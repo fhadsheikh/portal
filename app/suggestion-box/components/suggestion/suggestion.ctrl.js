@@ -51,6 +51,6 @@ suggestionBox.controller('SuggestionCtrl', function ($scope,$routeParams,layout,
 
     
     // Stick footer to bottom of screen
-    layout.stickyFooter(544);
+    layout.stickyFooter(495);
     
   });

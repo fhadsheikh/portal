@@ -45,7 +45,7 @@ suggestionBox.controller('ModerateSuggestionCtrl', function($scope,layout,sugges
 
 
 
-    // Stick footer to bottom of screen
-//    layout.stickyFooter(459);
+     //Stick footer to bottom of screen
+    layout.stickyFooter(690);
 
 })

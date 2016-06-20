@@ -73,6 +73,6 @@ suggestionBox.controller('SuggestionsCtrl', function ($scope,$location,suggestio
 //    };
 
     // Stick footer to bottom of screen
-    layout.stickyFooter(730);
+    layout.stickyFooter(681);
 
   });
