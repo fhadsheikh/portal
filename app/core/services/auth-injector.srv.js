@@ -1,26 +1,28 @@
 'use strict';
 
-/**
- * @ngdoc service
- * @name suggestionboxApp.authInjector
- * @description
- * # authInjector
- * Factory in the suggestionboxApp.
- */
-portal.factory('authInjector', function () {
-// Test
-return {
+angular
+    .module('portal')
+    .factory('authInjector', authInjector);
 
-    'request': function(config){
+    function authInjector(){
 
-        config.headers.Authorization = localStorage.getItem('jwt');
-        config.headers.accept = 'application/json';
-        config.headers['Content-Type'] = 'application/x-www-form-urlencoded;';
-        config.headers['x-requested-with'] = 'XMLHttpRequest';
+        var authInjector = {
+            request: request
+        }
 
-        return config; 
+        return authInjector;
+
+        //////////
+
+        function request(config){
+
+            config.headers.Authorization = localStorage.getItem('jwt');
+            config.headers.accept = 'application/json';
+            config.headers['Content-Type'] = 'application/x-www-form-urlencoded;';
+            config.headers['x-requested-with'] = 'XMLHttpRequest';
+
+            return config;
+
+        }
+
     }
-
-};
-
-});

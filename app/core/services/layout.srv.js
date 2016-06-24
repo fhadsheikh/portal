@@ -1,35 +1,41 @@
 'use strict';
 
-/**
- * @ngdoc service
- * @name suggestionboxApp.layout
- * @description
- * # layout
- * Factory in the suggestionboxApp.
- */
-portal.factory('layout', function () {
-    
-    var resizeWindow = function(subtract){
-        var height = $(window).height();
-        $('.stickyFooterDependancy').css('min-height',height-subtract); 
-    }
-    
-    return {
-        
-        stickyFooter: function (subtract) {
-            
-            console.log($(window).height());
-            
+angular
+    .module('portal')
+    .factory('layout',layout);
+
+    function layout(){
+
+        var layout = {
+            stickyFooter: stickyFooter,
+            validateEmptyFields: validateEmptyFields
+        }
+
+        return layout;
+
+        //////////
+
+        function load(){
+            resizeWindow();
+            stickyFooter();
+        }
+
+        function resizeWindow(subtract){
+            var height = $(window).height();
+            $('.stickyFooterDependancy').css('min-height',height-subtract);
+        }
+
+        function stickyFooter(subtract){
+
             resizeWindow(subtract);
-            
+
             $(window).resize(function(){resizeWindow(subtract);});
-            
-        },
-        
-        validateEmptyFields: function (fields){
-            
+
+        }
+
+        function validateEmptyFields(fields){
             for (var i = 0; i < fields.length; i++){
-                
+
                 if(fields[i].$pristine){
 
                     fields[i].$invalid = true;
@@ -38,6 +44,5 @@ portal.factory('layout', function () {
                 }
             }
         }
-    };
-    
-  });
+
+  }

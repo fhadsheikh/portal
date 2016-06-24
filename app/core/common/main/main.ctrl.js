@@ -1,66 +1,77 @@
 'use strict';
 
-/**
- * @ngdoc function
- * @name suggestionboxApp.controller:MainCtrl
- * @description
- * # MainCtrl
- * Controller of the suggestionboxApp
- */
-portal.controller('MainCtrl', function ($scope,user,$location,$rootScope) {
-    
-        var parent = this;
-    
-        parent.user = user.getUser();
-        
-        $rootScope.$on('userLoggedIn',function(event,args){            
-            if(args){
-                parent.loggedin = true;
-            } else {
-                parent.loggedin = false;
-            }
-        });
-    
-        user.checkLogin()
-        .then(function(){
-            parent.loggedin = true;
-        }, function(){
-            parent.loggedin = false;
-        })
-    
-        $rootScope.$on('userDataChanged', function(e,a){
-            parent.user = a.user; 
-            // Check if user is Admin
+angular
+    .module('portal')
+    .controller('MainCtrl', mainCtrl);
+
+    function mainCtrl(user,$location,$rootScope){
+
+        var vm = this;
+
+        vm.logout = logout;
+        vm.recentSuggestions = $rootScope.recentSuggestions;
+        vm.user = user.getUser();
+
+        load();
+
+        function logout(){
+            user.logout()
+            .then(function(){
+                vm.user = null;
+                $location.path('/');
+            }, function(){
+                console.log('unable to log user out');
+            });
+        };
+
+        function load(){
+            checkLogin();
+            watchLogin();
+            checkAdminPermission();
+            watchAdminPermission();
+        }
+
+        function checkLogin(){
+            user.checkLogin()
+            .then(function(){
+                vm.loggedin = true;
+            }, function(){
+                vm.loggedin = false;
+            })
+        }
+
+        function watchLogin(){
+            $rootScope.$on('userLoggedIn',function(event,args){
+                if(args){
+                    vm.loggedin = true;
+                } else {
+                    vm.loggedin = false;
+                }
+            });
+        }
+
+        function checkAdminPermission(){
             user.isAllowed('admin')
             .then(function(res){
-                parent.isAdmin = true;
+                vm.isAdmin = true;
             }, function(){
-                parent.isAdmin = false;
+                vm.isAdmin = false;
             });
-            
-        });
-    
-        // Check if user is Admin
-        user.isAllowed('admin')
-        .then(function(res){
-            parent.isAdmin = true;
-        }, function(){
-            parent.isAdmin = false;
-        });
-    
-        parent.recentSuggestions = $rootScope.recentSuggestions;
-    
-    // Insert this into suggestions page . not here.
-//        suggestions.recentSuggestions()
-//        .then(function(res){
-//            parent.recentSuggestions = res;
-//        });
-        
-        parent.logout = function(){
-            user.logout();
-            parent.user = null;
-            $location.path('/');
-        };
-    
+        }
 
-    });
+        function watchAdminPermission(){
+            $rootScope.$on('userDataChanged', function(e,a){
+                vm.user = a.user;
+                // Check if user is Admin
+                user.isAllowed('admin')
+                .then(function(res){
+                    vm.isAdmin = true;
+                }, function(){
+                    vm.isAdmin = false;
+                });
+
+            });
+
+        }
+
+    }

@@ -1,12 +1,10 @@
 'use strict';
 
-/**
- * @ngdoc directive
- * @name suggestionboxApp.directive:search
- * @description
- * # search
- */
-portal.directive('searchBar', function () {
+angular
+    .module('portal')
+    .directive('searchBar', searchBar);
+
+    function searchBar(){
         return {
           restrict: 'E',
           scope: {
@@ -20,4 +18,4 @@ portal.directive('searchBar', function () {
           templateUrl: 'core/common/search-bar/searchBar.view.html'
         };
 
-  });
+  }

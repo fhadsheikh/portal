@@ -1,14 +1,13 @@
 'use strict';
 
-/**
- * @ngdoc function
- * @name suggestionboxApp.controller:NotfoundCtrl
- * @description
- * # NotfoundCtrl
- * Controller of the suggestionboxApp
- */
-portal.controller('NotfoundCtrl', function (layout) {
+angular
+    .module('portal')
+    .controller('NotFoundCtrl', notFoundCtrl);
+
+    function notFoundCtrl(layout){
+
+        var vm = this;
 
         // Stick footer to bottom of screen
         layout.stickyFooter(459);
-    });
+    }

@@ -1,15 +1,13 @@
 'use strict';
 
-/**
- * @ngdoc directive
- * @name suggestionboxApp.directive:footer
- * @description
- * # footer
- */
-portal.directive('footer', function () {
+angular
+    .module('portal')
+    .directive('footer', footer);
+
+    function footer(){
         return {
           templateUrl: 'core/common/footer/footer.view.html',
           restrict: 'E',
           replace:true
         };
-  });
+    }
