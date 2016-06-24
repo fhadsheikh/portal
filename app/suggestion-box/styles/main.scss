@@ -40,6 +40,10 @@
     font-weight: 500;
     font-size: 12pt;
 }
+.sugg-single-menu{
+    text-align:right;
+    margin: 10px 0px;
+}
 .sugg-suggestion-desc{
     font-size: 10pt;
 }
@@ -67,8 +71,12 @@
 }
 
 .sugg-single-title{
-    margin:40px 0px;
     border-bottom:solid 1px #d4d4d4;
+    word-wrap: break-word;
+}
+
+.sugg-single-details{
+    margin-top:30px;
 }
 
 .sugg-single-rating{

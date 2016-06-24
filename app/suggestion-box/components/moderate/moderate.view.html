@@ -1,3 +1,5 @@
+<search-bar search="search"></search-bar>
+
 <div class="stickyFooterDependancy" style="margin-top:50px;">
     <div class="container">
         <div class="row center" style="margin-bottom:20px">
@@ -17,7 +19,7 @@
                         <td>Submitted</td>
                         <td>Status</td>
                     </thead>
-                    <tr ng-repeat="suggestion in suggestions | filter:filter"
+                    <tr ng-repeat="suggestion in suggestions | filter:search.filter"
                         ng-class="{'warning':suggestion.status == 0, 'danger':suggestion.status == 2}"
                         class="moderate-suggestion">
 

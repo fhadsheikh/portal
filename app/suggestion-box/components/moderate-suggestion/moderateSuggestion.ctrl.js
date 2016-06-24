@@ -1,10 +1,15 @@
 'use strict';
 
-suggestionBox.controller('ModerateSuggestionCtrl', function($scope,layout,suggestions,SweetAlert,moderateSuggestion){
+suggestionBox.controller('ModerateSuggestionCtrl', function($sce, $scope,layout,suggestions,SweetAlert,moderateSuggestion){
 
     $scope.sugg = suggestions.suggestion();
 
     $scope.messages = suggestions.messages();
+    
+    $scope.edit = function()
+    {
+        $scope.editView = true;
+    }
 
     $scope.submitMessage = function()
     {
@@ -27,6 +32,12 @@ suggestionBox.controller('ModerateSuggestionCtrl', function($scope,layout,sugges
             console.log(err);
         });
     };
+    
+    
+    $scope.cancelEdit = function()
+    {
+        $scope.editView = false;
+    }
 
     $scope.status = function(status)
     {

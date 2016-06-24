@@ -6,5 +6,7 @@ var portal = angular.module('portal', [
     'angular-storage',
     'suggestionBox',
     'oitozero.ngSweetAlert',
-    'ngtimeago'
+    'ngtimeago',
+    'summernote',
+    'ngSanitize'
 ]);

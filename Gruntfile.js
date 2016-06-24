@@ -8,7 +8,7 @@ module.exports = function(grunt){
     var path = {
         dist: '.tmp',
         dev: 'app',
-        server: '0.0.0.0',
+        server: '192.168.1.128',
     }
 
     grunt.initConfig({

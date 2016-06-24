@@ -7,7 +7,7 @@
  * # PendingsuggestionCtrl
  * Controller of the suggestionboxApp
  */
-suggestionBox.controller('SuggestionPendingCtrl', function (layout,$scope,suggestions,SweetAlert) {
+suggestionBox.controller('SuggestionPendingCtrl', function (layout,$scope,suggestions,SweetAlert,suggestionPending) {
     
     $scope.sugg = suggestions.suggestion();
     
@@ -32,6 +32,25 @@ suggestionBox.controller('SuggestionPendingCtrl', function (layout,$scope,sugges
             console.log(err);
         });
     };
+    
+    $scope.edit = function()
+    {
+        $scope.editView = true;
+    }
+    
+    $scope.closeEdit = function()
+    {
+        $scope.editView = false;
+    }
+    
+    $scope.update = function(id)
+    {
+        suggestionPending.updateSuggestion(id,$scope.sugg.summary)
+        .then(function(res){
+            SweetAlert.success('Suggestion Saved', '','success');
+            $scope.editView = false;
+        });
+    }
     
     // Stick footer to bottom of screen
     layout.stickyFooter(690);

@@ -30,9 +30,15 @@
                         <label for="title">Title</label>
                         <input type="text" ng-model="newsuggestion.title" class="form-control" id="title" placeholder="">
                     </div>
+<!--
                     <div class="form-group">
                         <label for="summary">Summary</label>
                         <textarea ng-model="newsuggestion.summary" class="form-control" rows="6"></textarea>
+                    </div>
+-->
+                    <div class="form-group">
+                        <label for="summary">Summary</label>
+                        <summernote ng-model="newsuggestion.summary" config="summernoteOptions"></summernote>
                     </div>
                     
                     <button class="btn btn-lg btn-info btn-block" ng-click="endSubmission()">Submit</button>

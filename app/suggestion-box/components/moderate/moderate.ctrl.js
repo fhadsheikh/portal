@@ -19,18 +19,26 @@ suggestionBox.controller('ModerateCtrl', function(layout,moderateSrv,$scope,$loc
     $scope.setFilter = function(filter){
         
         
-        $scope.filter = {};
+        $scope.search.filter = {};
         
         if(filter.name == 'All'){
-            $scope.filter = $scope.filter.$;
+            $scope.search.filter = $scope.search.filter.$;
         } else {
-            $scope.filter.statusname = filter.name;
+            $scope.search.filter.statusname = filter.name;
         }
         
     }
     
     $scope.open = function(id){
         $location.path('/suggestion/pending/'+id);
+    }    
+    
+    // For search directive
+    $scope.search = {
+        title: 'Moderate',
+        description: 'Search through the pending suggestions below to mark as Approved or Declined',
+        filter: 'filter',
+        placeHolder: 'Search Suggestions'
     }
     
     // Stick footer to bottom of screen

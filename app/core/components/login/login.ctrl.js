@@ -63,6 +63,12 @@ portal.controller('LoginCtrl', function ($scope,layout,user) {
         });
     };
     
+    $scope.height = $(window).height();
+    
+    $(window).resize(function(){
+        $scope.height = $(window).height();
+    })
+    
     // Stick footer to bottom of screen
     layout.stickyFooter(544);
     
