@@ -47,9 +47,7 @@ suggestionBox.controller('SuggestionNewCtrl', function ($scope,layout,suggestion
             ['style', ['bold', 'italic', 'underline']],
             ['alignment', ['ul', 'ol']],
             ['table', ['table']],
-            ['insert', ['link','picture','video']],
-            ['edit',['undo','redo']],
-            ['help', ['help']]
+            ['edit',['undo','redo']]
         ]
     }
     

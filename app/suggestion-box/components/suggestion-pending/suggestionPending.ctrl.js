@@ -13,6 +13,15 @@ suggestionBox.controller('SuggestionPendingCtrl', function (layout,$scope,sugges
     
     $scope.messages = suggestions.messages();
     
+    $scope.summernoteOptions = {
+        toolbar: [
+            ['style', ['bold', 'italic', 'underline']],
+            ['alignment', ['ul', 'ol']],
+            ['table', ['table']],
+            ['edit',['undo','redo']]
+        ]
+    }
+    
     $scope.submitMessage = function()
     {
         suggestions.submitMessage($scope.sugg.id, $scope.newMessage)

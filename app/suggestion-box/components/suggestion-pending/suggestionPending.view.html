@@ -35,7 +35,7 @@
                     <p ng-bind-html="sugg.summary"></p>
                 </div>
                 <div ng-show="editView" class="sugg-single-body">
-                    <summernote ng-show="editView" ng-model="sugg.summary"></summernote>
+                    <summernote ng-show="editView" ng-model="sugg.summary" config="summernoteOptions"></summernote>
                     <div class="right">
                         <button class="btn btn-default" ng-click="closeEdit()">Cancel</button>
                         <button class="btn btn-info" ng-click="update(sugg.id)">Save</button>

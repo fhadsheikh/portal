@@ -29,6 +29,17 @@ suggestionBox.factory('moderateSuggestion', function ($http,$q,API,$location,use
             });
 
             return deferred.promise;
+        },
+        
+        lookupStatus: function(id)
+        {
+            if(id == 1) return 'Accepted';
+            
+            if(id == 0) return 'Pending';
+            
+            if(id == 2) return 'Declined';
+            
+            
         }
 
     }

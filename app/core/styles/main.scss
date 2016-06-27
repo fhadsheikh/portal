@@ -8,6 +8,9 @@
 @import "shortcuts.scss";
 @import "fonts.scss";
 
+$fa-font-path: '../bower_components/font-awesome/fonts' !default;
+@import "../../../bower_components/font-awesome/scss/font-awesome.scss";
+
 $primary: #47c4f0;
 
 body{

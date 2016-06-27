@@ -1,4 +1,4 @@
-
+$background-image: url('/images/bg.png');
 
 .sugg-submit{
     float:right;
@@ -9,7 +9,7 @@
     color:white;
     padding:30px 0px;
     text-align:center;
-    background-image:url("/suggestion-box/images/bg.png");
+    background-image:$background-image;
     font-family: 'Roboto', sans-serif;
 }
 
@@ -62,7 +62,7 @@
     padding: 25px 0px;
     color: White;
     font-size: 13pt;
-    background-image:url('/suggestion-box/images/bg.png');
+    background-image:$background-image;
 }
 .sugg-single-header h1{
     font-size:50px;

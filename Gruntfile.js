@@ -78,8 +78,27 @@ module.exports = function(grunt){
         
         copy: {
             dist: {
-                src: 'app/index.html',
-                dest: path.dist + '/index.html'
+                files: [
+                    {
+                        src: 'app/index.html',
+                        dest: path.dist + '/index.html'
+                    },
+                    {
+                        cwd: 'app/',
+                        expand: true,
+                        flatten:true,
+                        filter: 'isFile',
+                        src: ['**/*.png','**/*.gif'],
+                        dest: path.dist + '/images'
+                    },
+                    {
+                        flatten:true,
+                        filter: 'isFile',
+                        expand:true,
+                        src: ['bower_components/summernote/dist/font/summernote.ttf','bower_components/summernote/dist/font/summernote.woff'],
+                        dest: path.dist + '/styles/font'
+                    }
+                ]
             }
         },
 
@@ -87,7 +106,7 @@ module.exports = function(grunt){
             dist:    {
                 cwd: 'app',
                 src: '**/*.html',
-                dest: '.tmp/template.js',
+                dest: path.dist+ '/template.js',
                 options: {
                     module: 'portal',
                     usemin: 'scripts/scripts.js'
@@ -117,6 +136,18 @@ module.exports = function(grunt){
                     path.dist + '/scripts/*.js',
                     path.dist + '/styles/*.css'
                 ]
+            }
+        },
+        
+        htmlmin: {
+            dist: {
+                options: {
+                    removeComments: true,
+                    collapseWhitespace: true
+                },
+                files: {
+                    '.tmp/index.html' : '.tmp/index.html'
+                }
             }
         },
 
@@ -163,6 +194,7 @@ module.exports = function(grunt){
     grunt.loadNpmTasks('grunt-contrib-cssmin');
     grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-contrib-compass');
+    grunt.loadNpmTasks('grunt-contrib-htmlmin');
     grunt.loadNpmTasks('grunt-usemin');
     grunt.loadNpmTasks('grunt-ng-annotate');
     grunt.loadNpmTasks('grunt-angular-templates');
@@ -181,6 +213,7 @@ module.exports = function(grunt){
         'uglify',
         'filerev',
         'usemin',
+        'htmlmin:dist',
         'connect:dist',
         'watch'
     ]);

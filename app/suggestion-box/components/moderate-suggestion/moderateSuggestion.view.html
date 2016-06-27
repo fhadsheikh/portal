@@ -35,7 +35,7 @@
                     <p ng-bind-html="sugg.summary"></p>
                 </div>
                 <div ng-show="editView" class="sugg-single-body">
-                    <summernote ng-show="editView" ng-model="sugg.summary"></summernote>
+                    <summernote ng-show="editView" ng-model="sugg.summary" config="summernoteOptions"></summernote>
                     <div class="right">
                         <button class="btn btn-default" ng-click="cancelEdit()">Cancel</button>
                         <button class="btn btn-info">Save</button>
@@ -51,11 +51,11 @@
                     <table class="table">
                         <tr>
                             <td>ID:</td>
-                            <td>29</td>
+                            <td>{{sugg.id}}</td>
                         </tr>
                         <tr>
                             <td>Status:</td>
-                            <td>Pending</td>
+                            <td>{{sugg.statusName}}</td>
                         </tr>
                         <tr>
                             <td>Votes:</td>
