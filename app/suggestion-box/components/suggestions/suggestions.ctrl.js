@@ -20,8 +20,7 @@ angular
             console.log(res);
             $scope.suggestions = res;
             $scope.count = res.length;
-            $scope.mySuggestions = false;
-            $scope.allSuggestions = true;
+            $scope.selectedFilter = 'My Suggestions';
         });
     };
 
@@ -30,8 +29,7 @@ angular
         suggestions.getSuggestions().then(function(res){
             $scope.suggestions = res;
             $scope.count = res.length;
-            $scope.mySuggestions = true;
-            $scope.allSuggestions = false;
+            $scope.selectedFilter = 'All Suggestions';
         });
     };
 
@@ -52,8 +50,14 @@ angular
 
     $scope.sortClass = function(item)
     {
-        if(item === $scope.selectedSort || '-'+item === $scope.selectedSort){return 'selectedSort';}
+        if(item === $scope.selectedSort || '-'+item === $scope.selectedSort){return 'active';}
     };
+        
+    $scope.filterClass = function(item){
+        if(item === $scope.selectedFilter){
+            return 'active';
+        }
+    }
 
     $scope.viewAllSuggestions();
 

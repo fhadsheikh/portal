@@ -245,11 +245,6 @@
   margin: 30px 0px;
 }
 
-/* line 87, ../../suggestion-box/styles/main.scss */
-.selectedSort {
-  font-weight: bold;
-}
-
 /* line 1, ../../suggestion-box/common/messages/messages.scss */
 .messages {
   background-color: #F1F1F1;
