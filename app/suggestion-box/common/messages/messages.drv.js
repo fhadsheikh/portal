@@ -1,15 +1,13 @@
 'use strict';
 
-/**
- * @ngdoc directive
- * @name suggestionboxApp.directive:search
- * @description
- * # search
- */
-suggestionBox.directive('messages', function () {
+angular
+    .module('suggestionBox')
+    .directive('messages', messages);
+
+    function messages(){
         return {
           restrict: 'E',
           templateUrl: 'suggestion-box/common/messages/messages.view.html'
         };
 
-  });
+    }

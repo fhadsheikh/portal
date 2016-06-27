@@ -1,46 +1,44 @@
 'use strict';
 
-/**
- * @ngdoc service
- * @name suggestionboxApp.suggestions
- * @description
- * # suggestions
- * Factory in the suggestionboxApp.
- */
-suggestionBox.factory('moderateSuggestion', function ($http,$q,API,$location,user) {
+angular
+    .module('suggestionBox')
+    .factory('moderateSuggestion', moderateSuggestion);
 
-    return {
+    function moderateSuggestion($http,$q,API,$location,user){
 
-        changeStatus: function(id,status)
-        {
-            var data = $.param({
-                suggestionID: id,
-                status: status
-            });
 
-            var deferred = $q.defer();
+        return {
 
-            $http.post(API.url + 'moderate/updatestatus',data)
-            .success(function(res){
-                deferred.resolve(res);
-            })
-            .error(function(err){
-                deferred.reject(err);
-            });
+            changeStatus: function(id,status)
+            {
+                var data = $.param({
+                    suggestionID: id,
+                    status: status
+                });
 
-            return deferred.promise;
-        },
-        
-        lookupStatus: function(id)
-        {
-            if(id == 1) return 'Accepted';
-            
-            if(id == 0) return 'Pending';
-            
-            if(id == 2) return 'Declined';
-            
-            
+                var deferred = $q.defer();
+
+                $http.post(API.url + 'moderate/updatestatus',data)
+                .success(function(res){
+                    deferred.resolve(res);
+                })
+                .error(function(err){
+                    deferred.reject(err);
+                });
+
+                return deferred.promise;
+            },
+
+            lookupStatus: function(id)
+            {
+                if(id == 1) return 'Accepted';
+
+                if(id == 0) return 'Pending';
+
+                if(id == 2) return 'Declined';
+
+
+            }
+
         }
-
-    }
-});
+}

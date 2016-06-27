@@ -1,13 +1,10 @@
 'use strict';
 
-/**
- * @ngdoc service
- * @name suggestionboxApp.suggestions
- * @description
- * # suggestions
- * Factory in the suggestionboxApp.
- */
-suggestionBox.factory('suggestionPending', function ($http,$q,API) {
+angular
+    .module('suggestionBox')
+    .factory('suggestionPending',suggestionPending);
+
+    function suggestionPending($http,$q,API){
 
     return {
         
@@ -34,4 +31,4 @@ suggestionBox.factory('suggestionPending', function ($http,$q,API) {
         
     }
     
-});
+}

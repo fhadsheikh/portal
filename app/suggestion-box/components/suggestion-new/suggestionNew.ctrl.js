@@ -1,13 +1,10 @@
 'use strict';
 
-/**
- * @ngdoc function
- * @name suggestionboxApp.controller:NewsuggestionCtrl
- * @description
- * # NewsuggestionCtrl
- * Controller of the suggestionboxApp
- */
-suggestionBox.controller('SuggestionNewCtrl', function ($scope,layout,suggestions,$location) {
+angular
+    .module('suggestionBox')
+    .controller('SuggestionNewCtrl', suggestionNewCtrl);
+
+    function suggestionNewCtrl($scope,layout,suggestions,$location){
     
     $scope.wizard = {};
     $scope.wizard.rules = true;
@@ -54,4 +51,4 @@ suggestionBox.controller('SuggestionNewCtrl', function ($scope,layout,suggestion
     // Stick footer to bottom of screen
     layout.stickyFooter(556);
 
-});
+}

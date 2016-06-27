@@ -1,13 +1,10 @@
 'use strict';
 
-/**
- * @ngdoc function
- * @name suggestionboxApp.controller:MainCtrl
- * @description
- * # MainCtrl
- * Controller of the suggestionboxApp
- */
-suggestionBox.controller('SuggestionsCtrl', function ($scope,$location,suggestions,layout,$timeout) {
+angular
+    .module('suggestionBox')
+    .controller('SuggestionsCtrl', suggestionsCtrl);
+
+    function suggestionsCtrl($scope,$location,suggestions,layout,$timeout){
 
     // For search directive
     $scope.search = {
@@ -75,4 +72,4 @@ suggestionBox.controller('SuggestionsCtrl', function ($scope,$location,suggestio
     // Stick footer to bottom of screen
     layout.stickyFooter(681);
 
-  });
+  }

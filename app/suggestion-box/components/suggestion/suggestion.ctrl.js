@@ -1,13 +1,10 @@
 'use strict';
 
-/**
- * @ngdoc function
- * @name suggestionboxApp.controller:SuggestionCtrl
- * @description
- * # SuggestionCtrl
- * Controller of the suggestionboxApp
- */
-suggestionBox.controller('SuggestionCtrl', function ($scope,$routeParams,layout,suggestions,SweetAlert) {
+angular
+    .module('suggestionBox')
+    .controller('SuggestionCtrl', suggestionCtrl);
+
+    function suggestionCtrl($scope,$routeParams,layout,suggestions,SweetAlert){
 
     $scope.sugg = suggestions.suggestion();
 
@@ -53,4 +50,4 @@ suggestionBox.controller('SuggestionCtrl', function ($scope,$routeParams,layout,
     // Stick footer to bottom of screen
     layout.stickyFooter(495);
     
-  });
+  }

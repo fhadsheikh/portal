@@ -1,13 +1,10 @@
 'use strict';
 
-/**
- * @ngdoc service
- * @name suggestionboxApp.suggestions
- * @description
- * # suggestions
- * Factory in the suggestionboxApp.
- */
-suggestionBox.factory('suggestions', function ($http,$q,API,$location,user) {
+angular
+    .module('suggestionBox')
+    .factory('suggestions',suggestions);
+
+    function suggestions($http,$q,API,$location,user){
 
     var suggestion = null;
 
@@ -220,4 +217,4 @@ suggestionBox.factory('suggestions', function ($http,$q,API,$location,user) {
             return deferred.promise;
         }
     };
-  });
+  }

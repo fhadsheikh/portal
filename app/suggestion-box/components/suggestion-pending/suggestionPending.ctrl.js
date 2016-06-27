@@ -1,13 +1,10 @@
 'use strict';
 
-/**
- * @ngdoc function
- * @name suggestionboxApp.controller:PendingsuggestionCtrl
- * @description
- * # PendingsuggestionCtrl
- * Controller of the suggestionboxApp
- */
-suggestionBox.controller('SuggestionPendingCtrl', function (layout,$scope,suggestions,SweetAlert,suggestionPending) {
+angular
+    .module('suggestionBox')
+    .controller('SuggestionPendingCtrl', suggestionPendingCtrl);
+
+    function suggestionPendingCtrl(layout,$scope,suggestions,SweetAlert,suggestionPending){
     
     $scope.sugg = suggestions.suggestion();
     
@@ -63,4 +60,4 @@ suggestionBox.controller('SuggestionPendingCtrl', function (layout,$scope,sugges
     
     // Stick footer to bottom of screen
     layout.stickyFooter(690);
-  });
+  }

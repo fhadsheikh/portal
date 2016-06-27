@@ -1,3 +1,4 @@
 'use strict';
 
-var suggestionBox = angular.module('suggestionBox', []);
+angular
+    .module('suggestionBox', []);
