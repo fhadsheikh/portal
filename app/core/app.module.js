@@ -9,5 +9,6 @@ angular
     'oitozero.ngSweetAlert',
     'ngtimeago',
     'summernote',
-    'ngSanitize'
+    'ngSanitize',
+    'infinite-scroll'
 ]);

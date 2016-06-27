@@ -1,6 +1,3 @@
 'use strict';
 
-var suggestionBox = angular.module('suggestionBox', [
-    'ngRoute',
-    'infinite-scroll'
-]);
+var suggestionBox = angular.module('suggestionBox', []);

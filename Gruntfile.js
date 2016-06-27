@@ -51,6 +51,9 @@ module.exports = function(grunt){
         clean: {
             dist: {
                 src: [path.dist]
+            },
+            reset: {
+                src: [path.dist, 'app/images', 'app/fonts','fonts']
             }
         },
 
@@ -92,11 +95,44 @@ module.exports = function(grunt){
                         dest: path.dist + '/images'
                     },
                     {
+                        expand: true,
                         flatten:true,
                         filter: 'isFile',
-                        expand:true,
-                        src: ['bower_components/summernote/dist/font/summernote.ttf','bower_components/summernote/dist/font/summernote.woff'],
-                        dest: path.dist + '/styles/font'
+                        src: ['bower_components/font-awesome/fonts/*.*'],
+                        dest: path.dist + '/fonts'
+                    },                    
+                    {
+                        expand: true,
+                        flatten:true,
+                        filter: 'isFile',
+                        src: ['bower_components/summernote/dist/font/*.*'],
+                        dest: path.dist + '/fonts'
+                    }
+                ]
+            },
+            dev: {
+                files: [
+                    {
+                        cwd: 'app/',
+                        expand: true,
+                        flatten:true,
+                        filter: 'isFile',
+                        src: ['**/*.png','**/*.gif'],
+                        dest: 'app/images'
+                    },
+                    {
+                        expand: true,
+                        flatten:true,
+                        filter: 'isFile',
+                        src: ['bower_components/font-awesome/fonts/*.*'],
+                        dest: 'app/fonts'
+                    },                
+                    {
+                        expand: true,
+                        flatten:true,
+                        filter: 'isFile',
+                        src: ['bower_components/summernote/dist/font/*.*'],
+                        dest: 'app/fonts'
                     }
                 ]
             }
@@ -220,8 +256,13 @@ module.exports = function(grunt){
 
     grunt.registerTask('dev', [
         'compass',
+        'copy:dev',
         'connect:dev',
         'watch'
     ]);
+
+    grunt.registerTask('reset', [
+        'clean:reset'
+    ])
 
 }
