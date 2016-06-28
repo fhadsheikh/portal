@@ -21,12 +21,32 @@ angular
         .when('/forbidden', {
             templateUrl: 'core/components/forbidden/forbidden.view.html',
             controller: 'ForbiddenCtrl',
-            ControllerAs: 'forbidden'
+            ControllerAs: 'forbidden',
+            resolve: {
+                authenticate: function(user){
+                    return user.checkLogin() && user.isAllowed('client');
+                }
+            }
         })
         .when('/notfound', {
             templateUrl: 'core/components/not-found/notfound.view.html',
             controller: 'NotfoundCtrl',
-            controllerAs: 'notfound'
+            controllerAs: 'notfound',
+            resolve: {
+                authenticate: function(user){
+                    return user.checkLogin() && user.isAllowed('client');
+                }
+            }
+        })
+        .when('/account-pending', {
+            templateUrl: 'core/components/account-pending/accountPending.view.html',
+            controller: 'AccountPendingCtrl',
+            controllerAs: 'accountPendingCtrl',
+            resolve: {
+                authenticate: function(user){
+                    return user.checkLogin();
+                }
+            }
         })
         .when('/admin', {
             redirectTo: '/admin/manage-users'

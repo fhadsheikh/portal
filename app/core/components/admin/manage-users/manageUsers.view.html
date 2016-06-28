@@ -5,7 +5,7 @@
                 <side-menu active="'users'"></side-menu>
             </div>
             <div class="col-md-9">
-                <table class="table">
+                <table class="table table-bordered">
                     <thead>
                         <td>ID</td>
                         <td>Name</td>
@@ -13,18 +13,21 @@
                         <td>School</td>
                         <td>Department</td>
                         <td>Email</td>
+                        <td>Client</td>
+                        <td>Admin</td>
                         <td>Actions</td>
                     </thead>
-                    <tr ng-repeat="user in manageUsers.users">
-                        <td>{{user.id}}</td>
+                    <tr ng-repeat="user in manageUsers.users" ng-class="{'warning': user.sid == 0}">
+                        <td>{{user.pid}}</td>
                         <td>{{user.firstname}} {{user.lastname}}</td>
                         <td>{{user.jobtitle}}</td>
-                        <td>{{user.sid}}</td>
+                        <td>{{user.name}}</td>
                         <td>Disability</td>
                         <td>{{user.email}}</td>
-                        <td><a class="btn btn-sm btn-default" ng-click="manageUsers.deleteUser(user.id)"><i class="fa fa-trash"></i></a></td>
+                        <td><input type="checkbox" ng-model="user.client" ng-true-value="'1'"></td>
+                        <td><input type="checkbox" ng-model="user.admin" ng-true-value="'1'"></td>
+                        <td><a class="btn btn-sm btn-default" ng-click="manageUsers.deleteUser(user.pid)"><i class="fa fa-trash"></i></a></td>
                     </tr>
-
                 </table>
             </div>
         </div>

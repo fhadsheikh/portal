@@ -63,9 +63,14 @@ angular
                 };
             })
         }
+        
     };
+        
 
     function signup(){
+        
+        // Disable sign up button after first click
+        vm.busy = true;
 
         // Sign up user
         user.signUp(
@@ -81,6 +86,8 @@ angular
             user.login(vm.credentials.username,vm.credentials.password);
 
         });
+        
+        vm.busy = false;
     };
 
 }

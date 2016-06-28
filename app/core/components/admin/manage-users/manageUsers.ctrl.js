@@ -30,6 +30,7 @@ angular
             manageUsers.getUsers()
             .then(function(res){
                 vm.users = res;
+                console.log(res);
             });
 
         }

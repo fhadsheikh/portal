@@ -58,7 +58,6 @@ angular
                 deferred.resolve('user is logged in');
             } else {
                 $rootScope.$broadcast('userLoggedIn', false);
-                $location.path('/login');
                 deferred.reject('user is not logged in');
             }
 
@@ -79,7 +78,10 @@ angular
                 } else {
                     deferred.reject('Access denied');
                 }
+            } else {
+                deferred.reject('Access denied');
             }
+            
             return deferred.promise;
 
         }
@@ -118,7 +120,6 @@ angular
             if(store.get('jwt')){
                 store.remove('jwt');
                 deferred.resolve('User was logged out');
-                $location.path('/login');
             } else {
                 deferred.reject('User is already logged out');
             }
