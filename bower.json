@@ -27,7 +27,8 @@
     "ng-timeago": "^0.0.2",
     "ngInfiniteScroll": "1.0.0",
     "angular-summernote": "^0.8.1",
-    "angular-sanitize": "^1.5.7"
+    "angular-sanitize": "^1.5.7",
+    "angular-ui-router": "^0.3.1"
   },
   "overrides": {
     "bootstrap": {

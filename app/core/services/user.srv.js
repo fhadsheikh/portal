@@ -78,10 +78,7 @@ angular
                 } else {
                     deferred.reject('Access denied');
                 }
-            } else {
-                deferred.reject('Access denied');
             }
-            
             return deferred.promise;
 
         }
@@ -120,6 +117,7 @@ angular
             if(store.get('jwt')){
                 store.remove('jwt');
                 deferred.resolve('User was logged out');
+                $location.path('/login');
             } else {
                 deferred.reject('User is already logged out');
             }

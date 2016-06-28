@@ -4,26 +4,47 @@ angular
     .module('portal')
     .run(run);
 
-    function run($rootScope, $location, user){
-        
+    function run($rootScope, $location, user, $state){
         $rootScope.$on('$routeChangeError', function(){
-            console.log('route change error');
-            $location.path('/login');
-        });
+            $location.path('/notfound');
+        })
         
-        $rootScope.$on('$routeChangeStart', function(event, next, current){
+        $rootScope.$on('$stateChangeStart', stateChangeStart)
+        
+        function stateChangeStart(event, toState){
+            authentication(event, toState);
+            authorization(event, toState);
+        }
+        
+        function authentication(event, toState){
             
-            if(next.$$route.originalPath != '/login'){
+            if(toState.protected){
                 
-                var u = user.getUser();
-                
-                if(u.permissions.client == 0){
-                    $location.path('/account-pending');
-                }
+                user.checkLogin()
+                .then(function(){
+                    
+                }, function(){
+                    $state.go('login');
+                })
                 
             }
             
-        });
+        }
+        
+        function authorization(event, toState){
+            
+            if(toState.permission){
+                
+                user.isAllowed(toState.permission)
+                .then(function(){
+                    
+                }, function(){
+                    $state.go('forbidden');
+                })
+                
+            }
+            
+        }
         
         
     }

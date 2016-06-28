@@ -5,8 +5,6 @@ angular
     .controller('NotfoundCtrl', notFoundCtrl);
 
     function notFoundCtrl(layout){
-        
-        console.log('notfoundctrl');
 
         var vm = this;
 
