@@ -4,56 +4,87 @@ angular
     .module('portal')
     .config(config);
 
-    function config($routeProvider,$locationProvider,$httpProvider){
-        $routeProvider
-        .when('/login', {
+    function config($stateProvider, $urlRouterProvider ,$locationProvider,$httpProvider){
+        
+        $urlRouterProvider
+        .otherwise('/suggestions');
+        
+        $stateProvider
+        .state('login', {
+            url: '/login',
             templateUrl: 'core/components/login/login.view.html',
             controller: 'LoginCtrl',
             controllerAs: 'login',
-            resolve: {
-                loggedIn: function(user,$location){
-                    user.checkLogin().then(function(){
-                        $location.path('/suggestions');
-                    })
-                }
-            }
+            resolve: { login: login }
         })
-        .when('/forbidden', {
+        .state('forbidden', {
+            url: '/forbidden',
             templateUrl: 'core/components/forbidden/forbidden.view.html',
             controller: 'ForbiddenCtrl',
-            ControllerAs: 'forbidden'
+            controllerAs: 'forbidden',
+            protected: true
         })
-        .when('/notfound', {
+        .state('notfound', {
+            url: '/notfound',
             templateUrl: 'core/components/not-found/notfound.view.html',
             controller: 'NotfoundCtrl',
-            controllerAs: 'notfound'
+            controllerAs: 'notfound',
+            protected: true
         })
-        .when('/admin', {
-            redirectTo: '/admin/manage-users'
+        .state('admin', {
+            url: '/admin',
+            templateUrl: 'core/components/admin/admin.view.html',
+            controller: 'AdminCtrl',
+            controllerAs: 'admin',
+            protected: true,
+            permission: 'admin'
         })
-        .when('/admin/manage-users', {
+        .state('admin.manage-users', {
+            url: '/manage-users',
             templateUrl: 'core/components/admin/manage-users/manageUsers.view.html',
             controller: 'ManageUsersCtrl',
             controllerAs: 'manageUsers',
-            resolve: {
-                authenticate: function(user){
-                    return user.checkLogin() && user.isAllowed('admin');
-                }
-            }
+            protected: true,
+            permission: 'admin'
         })
-        .when('/admin/manage-techs', {
+        .state('admin.manage-techs', {
+            url: '/manage-techs',
             templateUrl: 'core/components/admin/manage-techs/manageTechs.view.html',
             controller: 'ManageTechsCtrl',
-            controllerAs: 'manageTechsCtrl',
-            resolve: {
-                authenticate: function(user){
-                    return user.checkLogin() && user.isAllowed('admin');
-                }
-            }
+            controllerAs: 'manageTechs',
+            protected: true,
+            permission: 'admin'
         })
-        .otherwise({
-            redirectTo: '/suggestions'
-        });
+        
+        // Redirect user if they're already logged in
+        function login($state, user){
+            user.checkLogin().then(function(){
+                $state.go('suggestions');
+            });
+        }
+        
+        
+
+//        .when('/admin/manage-users', {
+//            templateUrl: 'core/components/admin/manage-users/manageUsers.view.html',
+//            controller: 'ManageUsersCtrl',
+//            controllerAs: 'manageUsers',
+//            resolve: {
+//                authenticate: function(user){
+//                    return user.checkLogin() && user.isAllowed('admin');
+//                }
+//            }
+//        })
+//        .when('/admin/manage-techs', {
+//            templateUrl: 'core/components/admin/manage-techs/manageTechs.view.html',
+//            controller: 'ManageTechsCtrl',
+//            controllerAs: 'manageTechsCtrl',
+//            resolve: {
+//                authenticate: function(user){
+//                    return user.checkLogin() && user.isAllowed('admin');
+//                }
+//            }
+//        })
 
         // Send Authorization header with JWT with each request
         $httpProvider.interceptors.push('authInjector');

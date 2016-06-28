@@ -58,7 +58,6 @@ angular
                 deferred.resolve('user is logged in');
             } else {
                 $rootScope.$broadcast('userLoggedIn', false);
-                $location.path('/login');
                 deferred.reject('user is not logged in');
             }
 

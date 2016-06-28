@@ -6,7 +6,6 @@ angular
 
     function manageUsersCtrl(layout, user, manageUsers){
 
-
         var vm = this;
 
         vm.deleteUser = deleteUser;
@@ -15,7 +14,6 @@ angular
 
         function load(){
             getUsers();
-            stickyFooter();
         }
 
         function deleteUser(pid){
@@ -32,11 +30,6 @@ angular
                 vm.users = res;
             });
 
-        }
-
-        function stickyFooter(){
-            // Stick footer to bottom of screen
-            layout.stickyFooter(411);
         }
 
     }
