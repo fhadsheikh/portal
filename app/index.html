@@ -27,6 +27,8 @@
         <header ng-show="main.loggedin"></header>
 
         <div class="page" ng-view="" autoscroll="true"></div>
+        
+        <div ui-view></div>
 
         <footer ng-show="main.loggedin"></footer>
 
@@ -45,6 +47,7 @@
         <script src="../bower_components/summernote/dist/summernote.js"></script>
         <script src="../bower_components/angular-summernote/dist/angular-summernote.js"></script>
         <script src="../bower_components/angular-sanitize/angular-sanitize.js"></script>
+        <script src="../bower_components/angular-ui-router/release/angular-ui-router.js"></script>
         <!-- endbower -->
         <!-- endbuild -->
 
@@ -55,7 +58,7 @@
         <script src="core/components/login/login.ctrl.js"></script>
         <script src="core/components/forbidden/forbidden.ctrl.js"></script>
         <script src="core/components/not-found/notfound.ctrl.js"></script>
-        <script src="core/components/account-pending/accountPending.ctrl.js"></script>
+        <script src="core/components/admin/admin.ctrl.js"></script>
         <script src="core/components/admin/manage-users/manageUsers.ctrl.js"></script>
         <script src="core/components/admin/manage-users/manageUsers.srv.js"></script>
         <script src="core/components/admin/manage-techs/manageTechs.ctrl.js"></script>
