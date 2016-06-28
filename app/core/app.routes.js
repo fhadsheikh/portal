@@ -28,6 +28,29 @@ angular
             controller: 'NotfoundCtrl',
             controllerAs: 'notfound'
         })
+        .when('/admin', {
+            redirectTo: '/admin/manage-users'
+        })
+        .when('/admin/manage-users', {
+            templateUrl: 'core/components/admin/manage-users/manageUsers.view.html',
+            controller: 'ManageUsersCtrl',
+            controllerAs: 'manageUsers',
+            resolve: {
+                authenticate: function(user){
+                    return user.checkLogin() && user.isAllowed('admin');
+                }
+            }
+        })
+        .when('/admin/manage-techs', {
+            templateUrl: 'core/components/admin/manage-techs/manageTechs.view.html',
+            controller: 'ManageTechsCtrl',
+            controllerAs: 'manageTechsCtrl',
+            resolve: {
+                authenticate: function(user){
+                    return user.checkLogin() && user.isAllowed('admin');
+                }
+            }
+        })
         .otherwise({
             redirectTo: '/suggestions'
         });

@@ -20,14 +20,14 @@
             <div class="cw-login-page">
                 <div class="cw-form">
                     <div class="logo" style="padding-bottom:30px;"><a href=""><img src="http://clockworks.ca/images/clockworklogo3.png" height="80" alt="ClockWork Logo"></a></div>
-                    <div ng-show="alert" class="alert alert-danger">{{login.alert}}</div>
+                    <div ng-show="login.alert" class="alert alert-danger">{{login.alert}}</div>
                     <div ng-show="message" class="alert">{{login.message}}</div>
                     <form class="cw-register-form">
                         <input type="text" placeholder="Firstname" ng-model="login.firstname"/>
                         <input type="text" placeholder="Lastname" ng-model="login.lastname"/>
                         <input type="text" placeholder="Title" ng-model="login.title"/>
                         <input type="text" placeholder="Email Address" ng-model="login.email"/>
-                        <button ng-click="signup()">Sign Up</button>
+                        <button ng-click="login.signup()">Sign Up</button>
                     </form>
                     <form name="userForm" class="cw-login-form" novalidate>
                         <div class="form-group" ng-class="{ 'has-error' : userForm.username.$invalid && !userForm.username.$pristine }">

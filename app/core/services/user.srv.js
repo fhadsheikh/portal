@@ -14,12 +14,31 @@ angular
             isAllowed:isAllowed,
             login:login,
             logout:logout,
-            signUp:signUp
+            signUp:signUp,
+            deleteUser: deleteUser
         }
 
         return userService;
 
         //////////
+
+        function deleteUser(pid){
+
+            var data = $.param({
+                pid:pid
+            })
+
+            var deferred = $q.defer();
+
+            $http.post(API.url + 'user/delete', data)
+            .then(function(res){
+                deferred.resolve(res);
+            }, function(err){
+                deferred.reject(err);
+            })
+
+            return deferred.promise;
+        }
 
         function getUser(){
             if(localStorage.getItem('jwt')){
@@ -123,8 +142,11 @@ angular
             $http.post(API.url+'auth/user',data)
             .then(function(res){
                 deferred.resolve(res);
+                                console.log(res);
+
             }, function(err){
                 deferred.reject(err);
+                console.log(err);
             });
 
             return deferred.promise;

@@ -14,7 +14,6 @@ angular
 
                 var permissions = user.getUser().permissions || false;
 
-                console.log(permissions);
 
                 scope.headerItems = [
                     {

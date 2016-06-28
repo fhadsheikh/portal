@@ -3894,99 +3894,100 @@ a:hover {
   border-top: solid 5px #47c4f0;
   min-height: 120px;
   padding-top: 15px;
+  border-bottom: solid 1px #e0e0e0;
 }
 
 /* HEADER */
-/* line 51, main.scss */
+/* line 52, main.scss */
 .navbar {
   margin-bottom: -10px;
 }
 
-/* line 56, main.scss */
+/* line 57, main.scss */
 .logo {
   font-family: 'Pacifico', cursive;
   font-size: 30pt;
   color: #258EB3;
 }
 
-/* line 62, main.scss */
+/* line 63, main.scss */
 #copyright {
   position: fixed;
   bottom: 0px;
 }
 
-/* line 67, main.scss */
+/* line 68, main.scss */
 #tproLogo {
   position: fixed;
   bottom: 15px;
   right: 15px;
 }
 
-/* line 73, main.scss */
+/* line 74, main.scss */
 .navbar-menu {
   font-family: 'Open sans', sans-serif;
   font-weight: 600;
 }
 
-/* line 79, main.scss */
+/* line 80, main.scss */
 .user-menu {
   list-style: none;
   padding-top: 30px;
   text-align: right;
 }
 
-/* line 85, main.scss */
+/* line 86, main.scss */
 .user-menu li {
   display: inline;
   padding: 20px 6px;
   color: #717171;
 }
 
-/* line 91, main.scss */
+/* line 92, main.scss */
 .user-menu li ul li {
   display: block;
   padding: 0px 6px;
   color: #717171;
 }
 
-/* line 97, main.scss */
+/* line 98, main.scss */
 .user-menu li ul li a {
   padding: 7px;
   text-align: left;
 }
 
-/* line 102, main.scss */
+/* line 103, main.scss */
 .user-menu li ul li a:hover {
   background-color: white;
   font-weight: 600;
 }
 
 /* SUBHEADER */
-/* line 108, main.scss */
+/* line 109, main.scss */
 .subheader {
   border-top: solid 1px #E0E0E0;
   border-bottom: solid 1px #E0E0E0;
   background-color: whitesmoke;
 }
 
-/* line 114, main.scss */
+/* line 115, main.scss */
 .active {
   border-top: solid 1px #47C4F0;
 }
 
-/* line 118, main.scss */
+/* line 119, main.scss */
 .navbar-nav li {
   text-align: center;
 }
 
-/* line 122, main.scss */
+/* line 123, main.scss */
 .navbar-nav li a i {
   font-size: 14pt;
   padding: 2px 20px 10px 20px;
   color: #777777;
 }
 
-/* line 132, main.scss */
+/* line 133, main.scss */
 .footer {
   padding: 30px 0px;
   border-top: solid 1px #e0e0e0;
@@ -3996,29 +3997,29 @@ a:hover {
   z-index: 10000;
 }
 
-/* line 142, main.scss */
+/* line 143, main.scss */
 .footer-list {
   list-style: none;
   padding-left: 0px;
 }
 
-/* line 146, main.scss */
+/* line 147, main.scss */
 .footer-list li {
   border-bottom: solid 1px #616161;
   padding: 6px 0px;
 }
 
-/* line 151, main.scss */
+/* line 152, main.scss */
 .footer-list li:last-child {
   border-bottom: none;
 }
 
-/* line 155, main.scss */
+/* line 156, main.scss */
 .page {
   position: relative;
 }
 
-/* line 159, main.scss */
+/* line 160, main.scss */
 .ng-enter {
   animation: fadeIn 0.2s both linear;
   z-index: 5555;

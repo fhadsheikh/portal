@@ -1,0 +1,32 @@
+<div class="stickyFooterDependancy" style="margin-top:50px;">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3">
+                <side-menu active="'users'"></side-menu>
+            </div>
+            <div class="col-md-9">
+                <table class="table">
+                    <thead>
+                        <td>ID</td>
+                        <td>Name</td>
+                        <td>Position</td>
+                        <td>School</td>
+                        <td>Department</td>
+                        <td>Email</td>
+                        <td>Actions</td>
+                    </thead>
+                    <tr ng-repeat="user in manageUsers.users">
+                        <td>{{user.id}}</td>
+                        <td>{{user.firstname}} {{user.lastname}}</td>
+                        <td>{{user.jobtitle}}</td>
+                        <td>{{user.sid}}</td>
+                        <td>Disability</td>
+                        <td>{{user.email}}</td>
+                        <td><a class="btn btn-sm btn-default" ng-click="manageUsers.deleteUser(user.id)"><i class="fa fa-trash"></i></a></td>
+                    </tr>
+
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

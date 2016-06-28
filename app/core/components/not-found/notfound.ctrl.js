@@ -2,7 +2,7 @@
 
 angular
     .module('portal')
-    .controller('NotFoundCtrl', notFoundCtrl);
+    .controller('NotfoundCtrl', notFoundCtrl);
 
     function notFoundCtrl(layout){
 
