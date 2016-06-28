@@ -5,8 +5,6 @@ angular
     .controller('MainCtrl', mainCtrl);
 
     function mainCtrl(user,$location,$rootScope){
-        
-        console.log('mainctrl');
 
         var vm = this;
 
@@ -20,7 +18,7 @@ angular
             user.logout()
             .then(function(){
                 vm.user = null;
-                $location.path('/login');
+                $location.path('/');
             }, function(){
                 console.log('unable to log user out');
             });

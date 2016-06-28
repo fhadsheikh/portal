@@ -1,7 +1,32 @@
 <div>
-    <a class="btn btn-block btn-default" ng-class="{'active': active == 'users'}" ng-href="admin/manage-users"> Manage Users</a>
-    <a class="btn btn-block btn-default" ng-class="{'active': active == 'techs'}" ng-href="admin/manage-techs"> Manage Techs</a>
-    <a class="btn btn-block btn-default" ng-class="{'active': active == 'schools'}" ng-href="admin/manage-schools"> Manage Schools</a>
+    <a class="btn btn-block btn-default" 
+       ng-class="{'active': admin.active == 'users'}" 
+       ng-click="admin.selectTab('users')" 
+       ui-sref="admin.manage-users"> 
+        
+        Manage Users
+        
+    </a>
+    
+    <a class="btn btn-block btn-default" 
+       ng-class="{'active': admin.active == 'users'}" 
+       ng-click="admin.selectTab('users')" 
+       ui-sref="admin.manage-users"> 
+        
+        Manage Users
+        
+    </a>
+    
+    <a class="btn btn-block btn-default" 
+       ng-class="{'active': admin.active == 'users'}" 
+       ng-click="admin.selectTab('users')" 
+       ui-sref="admin.manage-users"> 
+        
+        Manage Users
+        
+    </a>
+    
+    <a class="btn btn-block btn-default" ng-class="{'active': active == 'techs'}" ui-sref="admin.manage-techs"> Manage Techs</a>
     <a class="btn btn-block btn-default">Settings</a>
     <a class="btn btn-block btn-default">Advanced Settings</a>
 </div>

@@ -3,6 +3,7 @@
 angular
     .module('portal', [
     'ngRoute',
+    'ui.router',
     'angular-jwt',
     'angular-storage',
     'suggestionBox',
