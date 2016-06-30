@@ -4,7 +4,7 @@ angular
     .module('suggestionBox')
     .controller('SuggestionCtrl', suggestionCtrl);
 
-    function suggestionCtrl($scope,$routeParams,layout,suggestions,SweetAlert){
+    function suggestionCtrl($scope,layout,suggestions,SweetAlert){
 
     $scope.sugg = suggestions.suggestion();
 

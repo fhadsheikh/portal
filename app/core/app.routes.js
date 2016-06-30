@@ -7,7 +7,7 @@ angular
     function config($stateProvider, $urlRouterProvider ,$locationProvider,$httpProvider){
         
         $urlRouterProvider
-        .otherwise('/suggestions');
+        .otherwise('suggestions');
         
         $stateProvider
         .state('login', {
@@ -62,29 +62,6 @@ angular
                 $state.go('suggestions');
             });
         }
-        
-        
-
-//        .when('/admin/manage-users', {
-//            templateUrl: 'core/components/admin/manage-users/manageUsers.view.html',
-//            controller: 'ManageUsersCtrl',
-//            controllerAs: 'manageUsers',
-//            resolve: {
-//                authenticate: function(user){
-//                    return user.checkLogin() && user.isAllowed('admin');
-//                }
-//            }
-//        })
-//        .when('/admin/manage-techs', {
-//            templateUrl: 'core/components/admin/manage-techs/manageTechs.view.html',
-//            controller: 'ManageTechsCtrl',
-//            controllerAs: 'manageTechsCtrl',
-//            resolve: {
-//                authenticate: function(user){
-//                    return user.checkLogin() && user.isAllowed('admin');
-//                }
-//            }
-//        })
 
         // Send Authorization header with JWT with each request
         $httpProvider.interceptors.push('authInjector');

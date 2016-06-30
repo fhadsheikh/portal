@@ -30,7 +30,6 @@ angular
               defer.resolve(res);
           })
           .error(function onError(err){
-              defer.reject(err);
               $location.path('/login');
           });
 
@@ -176,6 +175,7 @@ angular
         },
         isPending: function(id)
         {
+            console.log('called function isPending');
             var deferred = $q.defer();
 
             $http.get(API.url + 'suggestion/checkpending?id='+id)
@@ -190,6 +190,7 @@ angular
         },
         isApproved: function(id)
         {
+            console.log('called funcion isApproved');
             var deferred = $q.defer();
 
             $http.get(API.url + 'suggestion/checkapproved?id='+id)
@@ -204,6 +205,7 @@ angular
         },
         isOwner: function(id)
         {
+            console.log('called function isOwner');
             var deferred = $q.defer();
 
             $http.get(API.url + 'suggestion/isowner?id='+id)

@@ -8,8 +8,6 @@ angular
 
         $scope.sugg = suggestions.suggestion();
 
-        console.log($scope.sugg);
-
         $scope.sugg.statusName = moderateSuggestion.lookupStatus($scope.sugg.status);
 
         $scope.messages = suggestions.messages();
