@@ -55,6 +55,14 @@ angular
             protected: true,
             permission: 'admin'
         })
+        .state('admin.manage-schools', {
+            url: '/manage-schools',
+            templateUrl: 'core/components/admin/manage-schools/manageSchools.view.html',
+            controller: 'ManageSchoolsCtrl',
+            controllerAs: 'manageSchools',
+            protected: true,
+            permission: 'admin'
+        })
         
         // Redirect user if they're already logged in
         function login($state, user){

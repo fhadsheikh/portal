@@ -4,7 +4,7 @@ angular
     .module('portal')
     .controller('MainCtrl', mainCtrl);
 
-    function mainCtrl(user,$location,$rootScope){
+    function mainCtrl(user,$state,$rootScope){
 
         var vm = this;
 
@@ -18,7 +18,7 @@ angular
             user.logout()
             .then(function(){
                 vm.user = null;
-                $location.path('/');
+                $state.go('login');
             }, function(){
                 console.log('unable to log user out');
             });
@@ -29,6 +29,24 @@ angular
             watchLogin();
             checkAdminPermission();
             watchAdminPermission();
+            checkCredits();
+            watchVote();
+        }
+        
+        function checkCredits(){
+            user.getCredits()
+            .then(function(res){
+                vm.credits = res.data;
+            })
+        }
+        
+        function watchVote(){
+            $rootScope.$on('userVoted', function(event,args){
+                 user.getCredits()
+                .then(function(res){
+                    vm.credits = res.data;
+                })
+            })
         }
 
         function checkLogin(){

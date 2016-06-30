@@ -15,12 +15,27 @@ angular
             login:login,
             logout:logout,
             signUp:signUp,
-            deleteUser: deleteUser
+            deleteUser: deleteUser,
+            getCredits: getCredits
         }
 
         return userService;
 
         //////////
+        
+        function getCredits(){
+            
+            var deferred = $q.defer();
+            
+            $http.get(API.url + 'user/credits')
+            .then(function(res){
+                deferred.resolve(res);
+            }, function(err){
+                deferred.reject(err);
+            })
+            
+            return deferred.promise;
+        }
 
         function deleteUser(pid){
 

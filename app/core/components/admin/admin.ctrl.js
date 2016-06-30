@@ -16,7 +16,6 @@ angular
         
         function selectTab(tab){
             vm.active = tab;
-            console.log(tab);
         }
 
         function load(){

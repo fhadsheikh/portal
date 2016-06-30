@@ -4,7 +4,7 @@ angular
     .module('suggestionBox')
     .controller('SuggestionCtrl', suggestionCtrl);
 
-    function suggestionCtrl($scope,layout,suggestions,SweetAlert){
+    function suggestionCtrl($scope,layout,suggestions,SweetAlert, $rootScope){
 
     $scope.sugg = suggestions.suggestion();
 
@@ -16,12 +16,27 @@ angular
     $scope.like = function(id)
     {
         suggestions.likeSuggestion(id)
-        .then(function(){
-            SweetAlert.swal('Thanks for voting!', '', 'success');
-            suggestions.getSuggestion(id)
-            .then(function(res){
-                $scope.sugg = res;
-            })
+        .then(function(res){
+            
+            if(res == 'not_enough_credits'){
+                
+                SweetAlert.swal('Not enough credits', 'Credits are reset to a total of 10 each month on the 1st', 'error')
+                
+            } else {
+            
+                SweetAlert.swal('Thanks for voting!', '', 'success');
+                
+                $rootScope.$broadcast('userVoted');
+                
+                suggestions.getSuggestion(id)
+                .then(function(res){
+                    
+                    $scope.sugg = res;
+                    
+                })
+                
+            }
+            
         });
     };
     

@@ -10,6 +10,7 @@ angular
 
     vm.logIn = logIn;
     vm.signup = signup;
+    vm.startSignUp = startSignUp;
 
     load();
 
@@ -64,6 +65,15 @@ angular
             })
         }
     };
+        
+    function startSignUp(){
+        
+         //Toggle sign up form since they're not registered already
+        $('form').animate({height: "toggle", opacity: "toggle"}, "slow");
+        
+        $('#firstname').focus();
+        
+    }
 
     function signup(){
 

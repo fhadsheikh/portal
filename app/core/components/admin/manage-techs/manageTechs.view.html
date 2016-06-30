@@ -1,7 +1,18 @@
 <table class="table">
-    <th>
+    <thead>
         <td>ID</td>
         <td>Name</td>
+        <td>Client</td>
+        <td>Admin</td>
+        <td>Credits</td>
         <td>Actions</td>
-    </th>
+    </thead>
+    <tr ng-repeat="tech in manageTechs.techs">
+        <td>{{tech.id}}</td>
+        <td>{{tech.firstname}} {{tech.lastname}}</td>
+        <td><input type="checkbox" ng-model="tech.client" ng-true-value="'1'" ng-false-value="'0'"></td>
+        <td><input type="checkbox" ng-model="tech.admin" ng-true-value="'1'" ng-false-value="'0'"></td>
+        <td>{{tech.amount}}</td>
+        <td><a class="btn btn-sm btn-default"><i class="fa fa-trash"></i></a></td>
+    </tr>
 </table>

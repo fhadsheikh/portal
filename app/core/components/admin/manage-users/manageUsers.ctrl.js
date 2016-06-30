@@ -4,7 +4,7 @@ angular
     .module('portal')
     .controller('ManageUsersCtrl', manageUsersCtrl);
 
-    function manageUsersCtrl(layout, user, manageUsers){
+    function manageUsersCtrl(user, manageUsers){
 
         var vm = this;
 
@@ -28,6 +28,7 @@ angular
             manageUsers.getUsers()
             .then(function(res){
                 vm.users = res;
+                console.log(res);
             });
 
         }

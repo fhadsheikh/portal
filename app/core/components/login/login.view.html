@@ -22,23 +22,33 @@
                     <div class="logo" style="padding-bottom:30px;"><a href=""><img src="http://clockworks.ca/images/clockworklogo3.png" height="80" alt="ClockWork Logo"></a></div>
                     <div ng-show="login.alert" class="alert alert-danger">{{login.alert}}</div>
                     <div ng-show="message" class="alert">{{login.message}}</div>
+                    
+                    <!-- SIGN UP FORM -->
+                    
                     <form class="cw-register-form">
-                        <input type="text" placeholder="Firstname" ng-model="login.firstname"/>
+                        <input type="text" id="firstname" placeholder="Firstname" ng-model="login.firstname"/>
                         <input type="text" placeholder="Lastname" ng-model="login.lastname"/>
                         <input type="text" placeholder="Title" ng-model="login.title"/>
                         <input type="text" placeholder="Email Address" ng-model="login.email"/>
-                        <button ng-click="login.signup()">Sign Up</button>
+                        <button ng-click="login.signup()" style="width:100%">Sign Up</button>
                     </form>
+                    
+                    <!-- LOG IN FORM -->
+                    
                     <form name="userForm" class="cw-login-form" novalidate>
+                        <!--Username-->
                         <div class="form-group" ng-class="{ 'has-error' : userForm.username.$invalid && !userForm.username.$pristine }">
-                            <input type="text" name="username" class="form-control" ng-model="login.credentials.username" placeholder="Username" required>
+                            <input type="text" name="username" class="form-control" ng-model="login.credentials.username" placeholder="Username" required autofocus>
                             <p ng-show="userForm.username.$invalid && !userForm.username.$pristine" class="help-block">Username is required.</p>
                         </div>
+                        <!--Password-->
                         <div class="form-group" ng-class="{ 'has-error' : userForm.password.$invalid && !userForm.password.$pristine }">
                             <input type="password" name="password" class="form-control" ng-model="login.credentials.password" placeholder="Password" required>
                             <p ng-show="userForm.password.$invalid && !userForm.password.$pristine" class="help-block">Password is required.</p>
                         </div>
+                        
                         <button type="submit" ng-click="login.logIn(userForm)">login</button>
+                        <button type="submit" ng-click="login.startSignUp()">Register</button>
                     </form>
                 </div>
             </div>

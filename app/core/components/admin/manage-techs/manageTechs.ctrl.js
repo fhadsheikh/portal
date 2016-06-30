@@ -4,27 +4,27 @@ angular
     .module('portal')
     .controller('ManageTechsCtrl', manageTechsCtrl);
 
-    function manageTechsCtrl(layout, user){
+    function manageTechsCtrl(manageTechs){
 
 
         var vm = this;
-
-        vm.permissions = user.getUser().permissions || false;
-        vm.selectTab = selectTab;
-
+        
         load();
 
-        function selectTab(tab){
-            vm.selectedTab = tab;
-        }
-
         function load(){
-            stickyFooter();
+            getTechs();
         }
 
-        function stickyFooter(){
-            // Stick footer to bottom of screen
-            layout.stickyFooter(411);
-        }
+        function getTechs(){
+            
+            manageTechs.getTechs()
+            .then(function(res){
+                vm.techs = res.data;
+                console.log(res.data);
+            }, function(err){
+                
+            })
 
+        }
+        
     }
