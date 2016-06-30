@@ -9,24 +9,23 @@
     </a>
     
     <a class="btn btn-block btn-default" 
-       ng-class="{'active': admin.active == 'users'}" 
-       ng-click="admin.selectTab('users')" 
-       ui-sref="admin.manage-users"> 
+       ng-class="{'active': admin.active == 'techs'}" 
+       ng-click="admin.selectTab('techs')" 
+       ui-sref="admin.manage-techs"> 
         
-        Manage Users
+        Manage Technicians
         
     </a>
     
     <a class="btn btn-block btn-default" 
-       ng-class="{'active': admin.active == 'users'}" 
-       ng-click="admin.selectTab('users')" 
-       ui-sref="admin.manage-users"> 
+       ng-class="{'active': admin.active == 'schools'}" 
+       ng-click="admin.selectTab('schools')" 
+       ui-sref="admin.manage-schools"> 
         
-        Manage Users
+        Manage Schools
         
     </a>
     
-    <a class="btn btn-block btn-default" ng-class="{'active': active == 'techs'}" ui-sref="admin.manage-techs"> Manage Techs</a>
     <a class="btn btn-block btn-default">Settings</a>
     <a class="btn btn-block btn-default">Advanced Settings</a>
 </div>
