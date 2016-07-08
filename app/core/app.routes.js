@@ -73,7 +73,12 @@ angular
 
         // Send Authorization header with JWT with each request
         $httpProvider.interceptors.push('authInjector');
-
+        
+        var token = localStorage.getItem('jwt');
+        $httpProvider.defaults.headers.common['Authorization'] = token;
+        
+        console.log(token);
+        
         // Enable html5Mode to remove "#" from URLs
         $locationProvider.html5Mode(true);
     }

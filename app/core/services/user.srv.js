@@ -27,7 +27,7 @@ angular
             
             var deferred = $q.defer();
             
-            $http.get(API.url + 'user/credits')
+            $http.get(API.bridgeUrl + 'credit')
             .then(function(res){
                 deferred.resolve(res);
             }, function(err){
@@ -57,7 +57,7 @@ angular
 
         function getUser(){
             if(localStorage.getItem('jwt')){
-                return jwtHelper.decodeToken(localStorage.getItem('jwt')).data;
+                return jwtHelper.decodeToken(localStorage.getItem('jwt'));
             } else {
                 return false;
             }
@@ -88,7 +88,7 @@ angular
 
                 var jwt = jwtHelper.decodeToken(localStorage.getItem('jwt'));
 
-                if(jwt.data.permissions[permission] == 1){
+                if(jwt[permission] == 1){
                     deferred.resolve('User has access');
                 } else {
                     deferred.reject('Access denied');
@@ -100,19 +100,23 @@ angular
 
         function login(username, password){
 
-            var data = $.param({
-                username: username,
-                password: password
-            });
+//            var data = $.param({
+//                username: username,
+//                password: password
+//            });
 
             var deferred = $q.defer();
 
-            $http.post(API.url+'auth', data)
+            $http.get('http://192.168.1.142/Bridge/api/Auth?username=abc&password=def', {
+                headers: {
+                    'Authorization': '1l232klj4lk2j3'
+                }
+            })
             .then(function(res){
                 store.set('jwt',res.data);
                 deferred.resolve(res.data);
 
-                user = jwtHelper.decodeToken(res.data).data;
+                user = jwtHelper.decodeToken(res.data);
                 $rootScope.$broadcast('userDataChanged', {user: user});
 
                 $location.path('/suggestions');

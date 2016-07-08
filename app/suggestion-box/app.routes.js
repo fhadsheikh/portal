@@ -31,9 +31,7 @@ angular
             protected: true,
             permission: 'client',
             resolve: {
-                isApproved: isApproved,
-                suggestion: suggestion,
-                messages: messages
+                suggestion: suggestion
             }
         })
         .state('suggestion-pending', {
@@ -72,21 +70,27 @@ angular
         })
         
         function isApproved(suggestions,$stateParams){
-            return suggestions.isApproved($stateParams.id);
+//            return suggestions.isApproved($stateParams.id);
+            
+            return true;
         }
         
         function isPending(suggestions, $stateParams, $state){
-            return suggestions.isPending($stateParams.id)
-            .catch(function(){
-                $state.go('notfound');
-            })
+//            return suggestions.isPending($stateParams.id)
+//            .catch(function(){
+//                $state.go('notfound');
+//            })
+            
+            return false;
         }
         
         function isOwner(suggestions, $stateParams, $state){
-            return suggestions.isOwner($stateParams.id)
-            .catch(function(){
-                $state.go('forbidden');
-            })
+//            return suggestions.isOwner($stateParams.id)
+//            .catch(function(){
+//                $state.go('forbidden');
+//            })
+            
+            return true;
         }
         
         function suggestion(suggestions,$stateParams){

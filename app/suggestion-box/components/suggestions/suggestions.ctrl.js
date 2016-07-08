@@ -34,7 +34,7 @@ angular
     };
 
     $scope.openSuggestion = function(sugg){
-        if(sugg.status === '1'){
+        if(sugg.status === 1){
             $location.path('/suggestion/'+sugg.id);
         } else {
             $location.path('/suggestion/pending/'+sugg.id);

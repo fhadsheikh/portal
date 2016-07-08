@@ -25,8 +25,9 @@ angular
 
           var defer = $q.defer();
 
-          $http.get(API.url+'suggestions')
+          $http.get(API.bridgeUrl+'suggestions')
           .success(function onSuccess(res){
+              console.log(res);
               defer.resolve(res);
           })
           .error(function onError(err){
@@ -40,8 +41,10 @@ angular
         {
 
             var deferred = $q.defer();
-                $http.get(API.url+'suggestion?id='+id)
+                $http.get(API.bridgeUrl+'suggestion/1')
                 .success(function onSuccess(res){
+                    
+                    console.log(res);
                     suggestion = res;
                     deferred.resolve(res);
                 })
